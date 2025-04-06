@@ -1,21 +1,29 @@
 import Header from "./components/header/Header";
 import { SidebarDemo } from "./components/sidebar/Sidebar";
-import Footer from "./components/footer/Footer"; // optional
+import Footer from "./components/footer/Footer"; 
+import GameCarousel from "./components/landing/GameCarousel";
+import MostTrending from "./components/landing/MostTrending";
+import GameHighlight from "./components/landing/GameHighlight";
+import GameHighlight2 from "./components/landing/GameHighlight2";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col bg-black text-white">
       {/* ========== Header ========== */}
       <Header />
 
       {/* ========== Body with Sidebar & Main ========== */}
       <div className="flex flex-1">
-        {/* Sidebar */}
+       
+    
         <SidebarDemo />
 
-        {/* Main Content */}
-        <main className="flex-1 p-4 ">
-          Hello
+      
+        <main className=" flex-1 ">
+        <GameCarousel/>
+        <MostTrending/>
+        <GameHighlight/>
+        <GameHighlight2/>
                   </main>
       </div>
 

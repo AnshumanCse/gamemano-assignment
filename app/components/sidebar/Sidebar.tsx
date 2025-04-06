@@ -11,6 +11,7 @@ import Link from "next/link";
 import { motion } from "motion/react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { House,LogOut  } from 'lucide-react';
 
 export function SidebarDemo() {
   const links = [
@@ -18,28 +19,35 @@ export function SidebarDemo() {
       label: "Dashboard",
       href: "#",
       icon: (
-        <IconBrandTabler className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
+        <IconBrandTabler className="h-6 w-6 shrink-0 text-white dark:text-neutral-200" />
+      ),
+    },
+    {
+      label: "Home",
+      href: "#",
+      icon: (
+        <House className="h-6 w-6 shrink-0 text-white dark:text-neutral-200" />
       ),
     },
     {
       label: "Profile",
       href: "#",
       icon: (
-        <IconUserBolt className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
+        <IconUserBolt className="h-6 w-6 shrink-0 text-white dark:text-neutral-200" />
       ),
     },
     {
       label: "Settings",
       href: "#",
       icon: (
-        <IconSettings className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
+        <IconSettings className="h-6 w-6 shrink-0 text-white dark:text-neutral-200" />
       ),
     },
     {
       label: "Logout",
       href: "#",
       icon: (
-        <IconArrowLeft className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
+        <IconArrowLeft className="h-6 w-6 shrink-0 text-white dark:text-neutral-200" />
       ),
     },
   ];
@@ -47,15 +55,15 @@ export function SidebarDemo() {
   return (
     <div
       className={cn(
-        " flex w-full  h-screen flex-1 flex-col overflow-hidden rounded-md -mt-15",
-      // for your use case, use `h-screen` instead of `h-[60vh]`
+        "h-screen flex flex-1 flex-col overflow-hidden lg:-mt-18 max-w-fit  border-r-1 border-gray-500 bg-black ",
+   
       )}
     >
       <Sidebar open={open} setOpen={setOpen}>
-        <SidebarBody className="justify-between gap-10">
-          <div className="flex flex-1 flex-col overflow-x-hidden overflow-y-auto">
+        <SidebarBody className="justify-between gap-6 ">
+          <div className="flex flex-1 flex-col ">
             {open ? <Logo /> : <LogoIcon />}
-            <div className="mt-8 flex flex-col gap-2">
+            <div className="mt-8 flex flex-col gap-5">
               {links.map((link, idx) => (
                 <SidebarLink key={idx} link={link} />
               ))}
@@ -64,23 +72,29 @@ export function SidebarDemo() {
           <div>
             <SidebarLink
               link={{
-                label: "Manu Arora",
+                label: "Logout",
                 href: "#",
                 icon: (
-                  <Image
-                    src=""
-                    className="h-7 w-7 shrink-0 rounded-full"
-                    width={50}
-                    height={50}
-                    alt="Avatar"
-                  />
+                  // <Image
+                  //   src=""
+                  //   className="h-7 w-7 shrink-0 rounded-full"
+                  //   width={50}
+                  //   height={50}
+                  //   alt="Avatar"
+                  // />
+                  <LogOut  className="h-6 w-6 shrink-0 text-white dark:text-neutral-200" />
+
                 ),
               }}
             />
           </div>
         </SidebarBody>
       </Sidebar>
-      {/* <Dashboard /> */}
+      {/* <Dashboard />
+       */}
+      
+      
+
     </div>
   );
 }
@@ -90,13 +104,14 @@ export const Logo = () => {
       href="#"
       className="relative z-20 flex items-center space-x-2 py-1 text-sm font-normal text-black"
     >
-      <div className="h-5 w-6 shrink-0 rounded-tl-lg rounded-tr-sm rounded-br-lg rounded-bl-sm bg-black dark:bg-white" />
+      <h2 className="text-[#e58e27]  text-3xl sm:text-xl md:text-xl font-normal font-[family-name:var(--font-press-start)]">GQ</h2>
+
       <motion.span
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="font-medium whitespace-pre text-black dark:text-white"
+        className="font-medium whitespace-pre text-[#e58e27]"
       >
-        Acet Labs
+       Game
       </motion.span>
     </Link>
   );
@@ -107,7 +122,7 @@ export const LogoIcon = () => {
       href="#"
       className="relative z-20 flex items-center space-x-2 py-1 text-sm font-normal text-black"
     >
-      <div className="h-5 w-6 shrink-0 rounded-tl-lg rounded-tr-sm rounded-br-lg rounded-bl-sm bg-black dark:bg-white" />
+<h2 className= "text-2xl text-[#e58e27] sm:text-xl md:text-xl font-normal font-[family-name:var(--font-press-start)]">GQ</h2>
     </Link>
   );
 };
