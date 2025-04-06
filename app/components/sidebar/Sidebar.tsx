@@ -12,8 +12,10 @@ import { motion } from "motion/react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { House,LogOut  } from 'lucide-react';
+import { useRouter } from "next/router";
 
 export function SidebarDemo() {
+
   const links = [
     {
       label: "Dashboard",
@@ -83,9 +85,9 @@ export function SidebarDemo() {
                   //   alt="Avatar"
                   // />
                   <LogOut  className="h-6 w-6 shrink-0 text-white dark:text-neutral-200" />
-
                 ),
               }}
+            
             />
           </div>
         </SidebarBody>

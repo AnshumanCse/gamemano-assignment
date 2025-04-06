@@ -24,7 +24,7 @@ import {
   CardContent,
   CardFooter,
 } from "@/components/ui/card";
-
+import Cookies from "js-cookie";
 //================== || Schema validation || ======================= //
 const formSchema = z.object({
   username: z.string().min(2, {
@@ -51,8 +51,10 @@ export default function LoginPage() {
   const onSubmit = (data: FormData) => {
     console.log("Login successful:", data);
 
-    localStorage.setItem("user", JSON.stringify(data));
-
+    Cookies.set("user", JSON.stringify(data), {
+      expires: 7,
+      // secure: true, 
+    });
 
     router.push("/");
   };
